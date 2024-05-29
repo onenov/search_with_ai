@@ -1,4 +1,4 @@
-# Search with AI
+# Search with AI For Tide
 
 **English** [中文](./README_CN.md)  
 

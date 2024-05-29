@@ -1,4 +1,4 @@
-# Search with AI For Tode
+# Search with AI For Tide
 
 [English](./README.md) **中文**  
 
