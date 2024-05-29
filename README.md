@@ -2,13 +2,29 @@
 
 **English** [中文](./README_CN.md)  
 
-```Updated: 2024/05/27```
+```Updated: 2024/05/29```
 
-Build your own conversation-based search with AI, a simple implementation with Node.js & Vue3. [Live Demo](https://isou.chat/)  
+Build your own conversation-based search with AI, a simple implementation with Node.js & Vue3. [Live Demo](https://search.orence.ai/)  
 
+### Light
 <div align="center">
- <img src="./screenshot.jpg"></img>
+ <img src="./screenshot/en-light-home.png"></img>
 </div>
+<div align="center">
+ <img src="./screenshot/en-search-light.png"></img>
+</div>
+### Dark
+<div align="center">
+ <img src="./screenshot/en-dark-home.png"></img>
+</div>
+<div align="center">
+ <img src="./screenshot/en-search-drak.png"></img>
+</div>
+
+### Modify the instructions
+
+* UI beautification
+* Added PWA support (web/public/manifest.webmanifest)
 
 repo: [GitHub](https://github.com/yokingma/search_with_ai)、 [Gitee](https://gitee.com/zac_ma/search_with_ai)  
 
@@ -32,11 +48,11 @@ repo: [GitHub](https://github.com/yokingma/search_with_ai)、 [Gitee](https://gi
 * **Get the code.**
 
 ```shell
-git clone https://github.com/yokingma/search_with_ai.git
+git clone https://github.com/onenov/search_with_ai.git
 cd search_with_ai
 ```
 
-* **Edit** [.env.docker](https://github.com/yokingma/search_with_ai/blob/main/.env) **file.**
+* **Edit** [.env.docker](https://github.com/onenov/search_with_ai/blob/main/.env) **file.**
 
 For a quick start, no need to modify any configuration here, just run docker compose below.
 
@@ -68,6 +84,12 @@ docker build -t my_image .
 docker run -d -p 3000:3000 --name my_app my_image
 # linux run with host network
 # docker run -d --network host --name my_app my_image
+
+eg:
+docker build -t search_with_ai .
+docker run -d -p 8096:3000 --name search_with_ai_instance search_with_ai
+then visit <http://ip:8096>
+
 ```
 
 then visit <http://localhost:3000>

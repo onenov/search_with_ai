@@ -12,7 +12,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --td-brand-color: #000000;
-  --td-brand-color-active: #111111;
+  --td-brand-color-active: #1d4ed8;
   --td-brand-color-hover: #666666;
   --td-brand-color-focus: #333333;
   --main-bg-color: #ffffff;
@@ -20,17 +20,18 @@
 }
 
 :root[theme-mode="light"] {
-  --td-brand-color: #000000;
-  --td-brand-color-active: #111111;
-  --td-brand-color-hover: #666666;
+  --td-brand-color: #4f46e5;
+  --td-brand-color-active: #06b6d4;
+  --td-brand-color-hover: #6366f1;
   --td-brand-color-focus: #f5f5f5;
   --main-bg-color: #ffffff;
   --main-font-color: #333333;
+  --td-brand-color-focus:#fff;
 }
 
 :root[theme-mode="dark"] {
-  --td-brand-color: #000000;
-  --td-brand-color-active: #111111;
+  --td-brand-color: #0ea5e9;
+  --td-brand-color-active: #4c1d95;
   --td-brand-color-hover: #666666;
   --td-brand-color-focus: #333333;
   --main-bg-color: #000000;
@@ -60,8 +61,8 @@ html .markdown-body {
 }
 
 html .markdown-body pre {
-  color: #666666;
-  background-color: #f5f5f5;
+  color: var(--td-text-color-primary);
+  background-color: var(--td-brand-color-focus);
 }
 
 html[theme-mode="dark"] .markdown-body {
@@ -70,10 +71,9 @@ html[theme-mode="dark"] .markdown-body {
 }
 
 html[theme-mode="dark"] .markdown-body pre {
-  color: #999999;
+  color: var(--td-text-color-primary);
   background-color: #222222;
 }
-
 a {
   text-decoration: none;
 }
@@ -83,4 +83,61 @@ a {
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+html[theme-mode="dark"] #app {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nov-bg{
+  background: url(https://io.onenov.cn/file/202405112306542.png) center center / cover no-repeat;
+  height: 100vh
+}
+
+html[theme-mode="dark"] .nov-bg {
+  background: url(https://io.onenov.cn/file/202404122208434.png) center center /
+  cover no-repeat;
+}
+
+.main-height{
+  height: calc(100vh - 80px);
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+  scrollbar-width: none; /* 对于Firefox */
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  display: none; /* 对于Webkit浏览器如Chrome和Safari */
+}
+
+.t-tag--default.t-tag--light{
+  background-color: var(--td-brand-color-focus);
+  //border: 1px solid #ffffff90
+}
+
+.t-tag--default{
+  background-color: var(--td-brand-color-focus);
+  //border: 1px solid #ffffff90
+}
+
+.t-radio-group.t-radio-group--filled{
+  background-color: var(--td-brand-color-focus);
+  //border: 1px solid #ffffff90
+}
+
+.t-radio-group.t-radio-group--primary-filled .t-radio-button.t-is-checked{
+  //border: 1px solid #ffffff90;
+  border-radius: 10px;
+}
+
+.t-switch.t-size-l.t-is-checked.w-12{
+  background-color: var(--td-brand-color-focus);
+}
+
+.flex.items-center.justify-center.gap-2{
+  color: var(--td-text-color-primary);
 }

@@ -37,8 +37,8 @@ export default {
 
 <template>
   <div class="sear-category">
-    <t-radio-group variant="default-filled" :default-value="value" @change="onCategoryChange">
-      <t-radio-button v-for="item in categories" :key="item.value" :value="item.value">
+    <t-radio-group variant="primary-filled" @change="onCategoryChange" :default-value="value">
+      <t-radio-button v-for="item in categories" :value="item.value">
         {{ t(item.name) }}
       </t-radio-button>
     </t-radio-group>
@@ -47,7 +47,7 @@ export default {
 
 <style scoped>
 .sear-category {
- --td-radius-default: 20px;
- --td-radius-small: 20px;
+ --td-radius-default: 10px;
+ --td-radius-small: 10px;
 }
 </style>

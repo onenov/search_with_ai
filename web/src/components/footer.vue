@@ -27,17 +27,24 @@ export default {
 
 <template>
   <div class="flex w-full flex-col items-center gap-2">
-    <div class="text-center text-xs text-gray-400">
-      {{ t('warning') }}
-    </div>
     <div class="mt-2 flex items-center gap-2 text-xs text-black dark:text-white">
-      <div class="cursor-pointer" @click="emits('click')">{{ t('selectModel') }}: 
-        <t-tag v-if="!appStore.enableLocal" shape="round" size="small">{{ appStore.model || t('message.noSelect') }}</t-tag>
-        <t-tag v-else shape="round" size="small">{{ t('localModel') }}: {{ appStore.localModel || t('message.noSelect') }}</t-tag>
+      <div class="cursor-pointer" @click="emits('click')">{{ t('selectModel') }}:
+        <span v-if="!appStore.enableLocal" shape="round" size="small">{{ appStore.model || t('message.noSelect')
+          }}</span>
+        <span v-else shape="round" size="small">{{ t('localModel') }}: {{ appStore.localModel || t('message.noSelect')
+          }}</span>
       </div>
       <div class="cursor-pointer" @click="emits('click')">
-        {{ t('search') }}: <t-tag shape="round" size="small">{{ appStore.engine || t('message.noSelect') }}</t-tag>
+        {{ t('search') }}: <span shape="round" size="small">{{ appStore.engine || t('message.noSelect') }}</span>
       </div>
     </div>
+    <div class="text-center text-xs text-gray-400 mb-2">
+      {{ t('warning') }}
+    </div>
+    <a href="https://orence.net" target="bank">
+      <t-button size="small" shape="round" variant="text">
+        潮汐助手-更好的AI与增强的答案
+      </t-button>
+    </a>
   </div>
 </template>

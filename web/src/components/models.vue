@@ -47,7 +47,15 @@ export default {
 </script>
 
 <template>
-  <t-select v-model="model" :loading="loading" :label="t('llm')" :placeholder="t('selectModel')" @change="onModelSelect">
-    <t-option v-for="(item, index) in models" :key="index" :value="item" :label="item"></t-option>
-  </t-select>
+  <div class="search-model">
+    <t-select v-model="model" :loading="loading" :placeholder="t('selectModel')" @change="onModelSelect">
+      <t-option v-for="(item, index) in models" :key="index" :value="item" :label="item"></t-option>
+    </t-select>
+  </div>
 </template>
+<style scoped>
+.search-model {
+  --td-radius-default: 20px;
+  --td-radius-small: 20px;
+}
+</style>

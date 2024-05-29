@@ -1,14 +1,15 @@
 <template>
   <div id="search" class="size-full">
-    <div class="fixed inset-x-0 top-0 z-50 w-full border-0 border-b border-solid border-zinc-100 bg-white py-2 dark:border-zinc-700 dark:bg-black">
-      <div class="flex w-full items-center justify-center">
-        <div class="flex w-full flex-row flex-nowrap items-center gap-4 lg:max-w-2xl lg:p-0 xl:max-w-4xl">
-          <div class="grow pl-2">
+    <div
+      class="fixed inset-x-0 top-0 z-50 w-full border-0 border-solid border-b border-zinc-100 py-2 dark:border-zinc-700 dark:bg-black">
+      <div class="flex items-center justify-center pl-2">
+        <div class="flex flex-row flex-nowrap items-center gap-4 w-full lg:max-w-2xl lg:p-0 xl:max-w-5xl">
+          <div class="grow">
             <SearchInputBar v-model="query" :autofocus="false" :loading="loading" @search="onSearch" />
           </div>
-          <div class="shrink-0 grow-0 pr-2">
+          <div class="grow-0 shrink-0 pr-2">
             <t-tooltip :content="t('back')">
-              <t-button shape="circle" theme="default" @click="onBackHome">
+              <t-button shape="circle" variant="outline" size="large" theme="default" @click="onBackHome">
                 <template #icon>
                   <RiArrowGoBackLine size="14px" />
                 </template>
@@ -19,25 +20,20 @@
       </div>
     </div>
     <div class="inset-0 flex items-center justify-center">
-      <div class="size-full lg:max-w-2xl xl:max-w-4xl">
-        <div class="mt-20">
-          <div v-if="!loading" class="flex flex-wrap justify-between gap-2 px-4 py-2 lg:px-0">
+      <div class="size-full lg:max-w-2xl xl:max-w-5xl">
+        <div class="mt-20 overflow-y-auto main-height">
+          <div v-if="!loading" class="flex flex-wrap gap-2 justify-between px-4 py-2 lg:px-0">
             <SearchMode @change="onSearchModeChanged" />
             <SearCategory @change="onSearchCategoryChanged" />
           </div>
           <div class="p-4 lg:p-0">
             <div class="mt-0">
               <div class="flex flex-nowrap items-center gap-2 py-4 text-black dark:text-gray-200">
-                <RiChat3Line />
+                <RiMessage3Line />
                 <span class="text-lg font-bold ">{{ t('answer') }}</span>
               </div>
-              <ChatAnswer
-                :query="query"
-                :answer="result?.answer"
-                :contexts="result?.contexts"
-                :loading="loading"
-                @reload="onReload"
-              />
+              <ChatAnswer :query="query" :answer="result?.answer" :contexts="result?.contexts" :loading="loading"
+                @reload="onReload" />
               <div class="mt-4 flex">
                 <RelatedQuery :related="result?.related" @select="onSelectQuery" />
               </div>
@@ -54,17 +50,19 @@
             </div>
             <div class="my-4">
               <div class="flex flex-nowrap items-center gap-2 py-4 text-black dark:text-gray-200">
-                <RiChat1Fill />
+                <RiChatQuoteLine />
                 <span class="text-lg font-bold ">{{ t('chat') }}</span>
               </div>
-              <ContinueChat :contexts="result?.contexts" :clear="loading" :query="query" :answer="result?.answer ?? ''" :ask="ask" @message="onAnswering" />
+              <ContinueChat :contexts="result?.contexts" :clear="loading" :query="query" :answer="result?.answer ?? ''"
+                :ask="ask" @message="onAnswering" />
             </div>
             <div class="pb-20 pt-10">
               <PageFooter />
             </div>
           </div>
         </div>
-        <div class="fixed inset-x-0 bottom-0 z-50 w-full bg-gradient-to-t from-white to-transparent py-4 dark:from-black">
+        <div
+          class="fixed inset-x-0 bottom-0 z-50 w-full bg-gradient-to-t from-white to-transparent py-4 dark:from-black">
           <div class="flex w-full items-center justify-center">
             <div class="w-full drop-shadow-2xl lg:max-w-2xl xl:max-w-4xl">
               <ChatInput :loading="loading" @ask="onChat" />
@@ -86,7 +84,7 @@ import ChatInput from './components/input.vue';
 import { computed, onMounted, ref } from 'vue';
 import { MessagePlugin } from 'tdesign-vue-next';
 import { PageFooter, ChatAnswer, ChatMedia, RelatedQuery, ChatSources, SearchInputBar, SearchMode, SearCategory } from '../components';
-import { RiChat3Line, RiBook2Line, RiChat1Fill, RiArrowGoBackLine } from '@remixicon/vue';
+import { RiMessage3Line, RiBook2Line, RiChatQuoteLine, RiArrowGoBackLine } from '@remixicon/vue';
 import { IQueryResult, TSearCategory, TSearchMode } from '../interface';
 
 const appStore = useAppStore();
@@ -130,7 +128,7 @@ const onSearch = (val: string) => {
   query.value = val;
   router.currentRoute.value.query.q ??= val;
   querySearch(val);
-}; 
+};
 
 const onChat = (val: string) => {
   ask.value = val.trim();
@@ -200,11 +198,11 @@ async function querySearch(val: string | null, reload?: boolean) {
       },
       onError: (err) => {
         console.error('error', err);
-         MessagePlugin.error(`${t('message.queryError')}: ${err.message}`);
+        MessagePlugin.error(`${t('message.queryError')}: ${err.message}`);
         loading.value = false;
       }
     });
-  } catch(err) {
+  } catch (err) {
     ctrl.abort();
     abortCtrl = null;
     console.log(err);
@@ -213,7 +211,7 @@ async function querySearch(val: string | null, reload?: boolean) {
   }
 }
 
-function clear () {
+function clear() {
   result.value = {
     related: '',
     answer: '',

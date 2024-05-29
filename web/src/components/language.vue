@@ -2,25 +2,17 @@
 import { ref } from 'vue';
 import { useAppStore } from '../store';
 import { useI18n } from 'vue-i18n';
+import { RiTranslate, RiEnglishInput } from '@remixicon/vue';
 
 const appStore = useAppStore();
 const language = ref(appStore.language);
-const languageList = [
-  {
-    name: 'English',
-    value: 'en'
-  },
-  {
-    name: '中文',
-    value: 'zh'
-  }
-];
-
 const { t, locale } = useI18n();
 
-const onLanSelect = (val: any) => {
-  appStore.updateLanguage(val);
-  locale.value = val;
+const toggleLanguage = () => {
+  const newLanguage = language.value === 'en' ? 'zh' : 'en';
+  appStore.updateLanguage(newLanguage);
+  language.value = newLanguage;
+  locale.value = newLanguage;
   document.title = t('title');
 };
 </script>
@@ -32,7 +24,18 @@ export default {
 </script>
 
 <template>
-  <t-select v-model="language" :label="t('language')" :placeholder="t('selectLanguage')" @change="onLanSelect">
-    <t-option v-for="(item) in languageList" :key="item.value" :value="item.value" :label="item.name"></t-option>
-  </t-select>
+  <div class="language-toggle">
+    <t-button @click="toggleLanguage" variant="outline" shape="circle" theme="primary">
+      <template #icon>
+        <RiTranslate v-if="language === 'zh'" size="14" />
+        <RiEnglishInput v-else size="14" />
+      </template>
+    </t-button>
+  </div>
 </template>
+
+<style scoped>
+.language-toggle {
+  /* 样式根据需要进行修改 */
+}
+</style>

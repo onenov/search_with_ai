@@ -24,15 +24,15 @@ const onSearch = () => {
 </script>
 
 <template>
-  <div id="searchbar" class="flex flex-row rounded-3xl bg-zinc-100 p-2 transition-all dark:bg-zinc-800">
-    <div class="grow overflow-hidden rounded-3xl border border-zinc-100 dark:border-zinc-300 dark:bg-zinc-600">
-      <t-input v-model="query" :disabled="props.loading" clearable :autofocus="autofocus" :maxlength="100" size="large" :placeholder="t('tips.search')" @enter="onSearch">
-        <template #suffix>
-          <t-button :disabled="loading" shape="round" variant="base" @click="onSearch">
+  <div id="searchbar">
+    <div class="grow overflow-hidden rounded-3xl border-2 border-zinc-100 dark:border-white p-1 bg-white dark:bg-transparent flex items-center justify-center gap-2">
+      <t-input id="search" v-model="query" :disabled="props.loading" clearable :autofocus="autofocus" :maxlength="100" size="large" :placeholder="t('tips.search')" @enter="onSearch">
+      </t-input>
+      <div class="w-10">
+        <t-button class="right-buttom" :disabled="loading" shape="square" variant="base" @click="onSearch">
             <template #icon><RiArrowRightLine /></template>
           </t-button>
-        </template>
-      </t-input>
+      </div>
     </div>
     <div class="grow-0">
       <slot />
@@ -43,6 +43,10 @@ const onSearch = () => {
 
 <style scoped>
 #searchbar {
-  --td-radius-default: 24px;
+  --td-radius-default: 25px;
+  --td-size-5:20px
+}
+.right-buttom{
+  margin-right: -8px;
 }
 </style>

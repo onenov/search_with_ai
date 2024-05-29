@@ -45,7 +45,7 @@ const { t } = useI18n();
       <div 
         v-for="item in sources"
         :key="item.id"
-        class="relative overflow-hidden rounded-md bg-gray-100 p-2 transition-all hover:opacity-80 xl:p-3 dark:bg-zinc-800"
+        class="relative overflow-hidden rounded-md bg-white p-2 transition-all hover:opacity-80 xl:p-3 dark:bg-zinc-800"
       >
         <t-popup>
           <template #content>
@@ -59,7 +59,7 @@ const { t } = useI18n();
             <a :href="item.url" target="_blank" class="absolute block size-full"></a>
             <div class="truncate break-words text-sm text-black dark:text-gray-400">{{ item.name }}</div>
             <div class="mt-1 flex items-center gap-1">
-              <t-tag size="small" theme="default">{{ item.id }}</t-tag>
+              <t-tag size="small" variant="outline">{{ item.id }}</t-tag>
               <div class="truncate break-words">{{ item.url }}</div>
             </div>
           </div>

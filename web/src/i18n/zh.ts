@@ -1,5 +1,6 @@
 export default {
-  title: '基于AI的搜索引擎',
+  title: 'TIDE-Search丨基于AI的搜索引擎',
+  subtitle: '没有广告，直达结果',
   theme: '主题',
   answer: 'AI回答',
   ask: '问',
@@ -30,7 +31,7 @@ export default {
     queryError: '查询出错了',
     copyError: '复制失败了',
     noSelect: '暂未选择',
-    sourceError: '获取参考资料失败了',
+    sourceError: '获取参考资料失败了，搜索引擎可能存在问题',
     shareSuccess: '分享链接已复制到剪贴板。',
     success: '操作成功了！'
   },

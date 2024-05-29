@@ -29,12 +29,12 @@ const relatedArr = computed(() => {
 <template>
   <div class="flex w-full flex-col gap-4">
     <template v-if="relatedArr?.length">
-      <div class="text-sm font-bold text-black dark:text-gray-300">{{ t('related') }}:</div>
+      <div class="text-lg font-bold text-black dark:text-gray-300">{{ t('related') }}:</div>
       <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
         <div
           v-for="(item, index) in relatedArr"
           :key="index"
-          class="cursor-pointer rounded-md border border-solid border-gray-200 bg-gray-100 p-2 transition-all hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900"
+          class="cursor-pointer rounded-md border border-solid border-gray-200 bg-white p-2 transition-all hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900"
           @click="onSelect(item)"
         >
           <span class="text-sm text-zinc-600 dark:text-zinc-400">{{ item }}</span>

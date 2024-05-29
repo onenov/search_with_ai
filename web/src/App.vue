@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue';
 import { useAppStore } from './store';
 import { useI18n } from 'vue-i18n';
-import { AppSettings, ToolBar } from './components';
+import { AppSettings } from './components';
 
 const { t, locale } = useI18n();
 const appStore = useAppStore();
@@ -35,8 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="size-full w-full dark:bg-black">
-    <ToolBar @show="showSettings = true" />
+  <div class="size-full w-full nov-bg">
     <AppSettings v-model="showSettings" />
     <router-view />
   </div>

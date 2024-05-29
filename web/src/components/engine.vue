@@ -18,18 +18,18 @@ onMounted(() => {
       name: t('searxng'),
       value: 'SEARXNG'
     },
-    {
-      name: t('google'),
-      value: 'GOOGLE'
-    },
+    //{
+    //  name: t('google'),
+    //  value: 'GOOGLE'
+    //},
     {
       name: t('bing'),
       value: 'BING'
     },
-    {
-      name: t('sogou'),
-      value: 'SOGOU'
-    }
+    //{
+    //  name: t('sogou'),
+    //  value: 'SOGOU'
+    //}
   ];
 });
 </script>
@@ -41,7 +41,16 @@ export default {
 </script>
 
 <template>
-  <t-select  v-model="engine" :label="t('search')" :placeholder="t('selectEngine')" @change="onSelect">
-    <t-option v-for="item in engines" :key="item.value" :value="item.value" :label="item.name"></t-option>
-  </t-select>
+  <div class="search-mode">
+    <t-select style="width: 102px" v-model="engine" :placeholder="t('selectEngine')" @change="onSelect">
+      <t-option v-for="item in engines" :key="item.value" :value="item.value" :label="item.name"></t-option>
+    </t-select>
+  </div>
 </template>
+
+<style scoped>
+.search-mode {
+  --td-radius-default: 20px;
+  --td-radius-small: 20px;
+}
+</style>
