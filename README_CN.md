@@ -16,6 +16,7 @@
 <div align="center">
  <img src="./screenshot/search-light.png"></img>
 </div>
+
 ### 深色模式
 <div align="center">
  <img src="./screenshot/dark-home.png"></img>

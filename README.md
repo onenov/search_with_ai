@@ -13,6 +13,7 @@ Build your own conversation-based search with AI, a simple implementation with N
 <div align="center">
  <img src="./screenshot/en-search-light.png"></img>
 </div>
+
 ### Dark
 <div align="center">
  <img src="./screenshot/en-dark-home.png"></img>
