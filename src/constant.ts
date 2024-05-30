@@ -24,8 +24,7 @@ export const Models: IModelInfo[] = [
   {
     platform: 'openai',
     type: 'openai',
-    //models: ['gpt-3.5-turbo', 'gpt-4-0125-preview', 'gpt-4-turbo-preview', 'gpt-4o']
-    models: ['gpt-4o-2024-05-13','moonshot-v1-32k','llama-3-70b']
+    models: ['gpt-4o']
   },
   {
     platform: 'baidu',
