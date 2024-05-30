@@ -2,10 +2,10 @@
   <div id="home" class="flex size-full items-center justify-center overflow-y-auto h-screen ">
     <div class="mt-20 flex w-full flex-col gap-4 p-4 sm:mt-10 lg:max-w-3xl xl:max-w-4xl">
       <div class="flex items-center justify-center gap-2">
-        <img src="https://io.onenov.cn/file/202405120135970.svg" class="w-64" />
+        <img src="https://wcyrusai.com/file/upload/2024/02/13/1757074954056110080.gif" class="w-64" />
       </div>
       <div class="flex items-center justify-center gap-2">
-        <span class="text-3xl font-bold dark:text-gray-100">TIDE AI Search</span>
+        <span class="text-3xl font-bold dark:text-gray-100">InstCopilot AI Search</span>
       </div>
       <div class="flex items-center justify-center gap-2">
         <span class="text-xl mb-4 font-bold dark:text-gray-100">{{ t('subtitle') }}</span>
