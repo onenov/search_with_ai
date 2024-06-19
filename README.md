@@ -2,7 +2,7 @@
 
 **English** [中文](./README_CN.md)  
 
-```Updated: 2024/05/29```
+```Updated: 2024/06/20```
 
 Build your own conversation-based search with AI, a simple implementation with Node.js & Vue3. [Live Demo](https://search.orence.ai/)  
 
